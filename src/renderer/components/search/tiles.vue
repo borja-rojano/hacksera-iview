@@ -18,7 +18,7 @@
         <div class="tile is-child box">
           <p class="title is-size-4 patent-title">{{row[0].title}}</p>
           <figure class="image image is-2by3">
-            <img src="https://patentimages.storage.googleapis.com/pages/US5455008-1.png">
+            <img v-bind:src="row[0].image">
           </figure>
         </div>
       </div>
