@@ -5,33 +5,50 @@
       <div class="column is-3">
 
         <div class="field" id='query-top'>
-          <label class="label">Query 1/1</label>
+          <label class="label">Concept 1:</label>
           <div class="control">
-            <textarea class="textarea" type="text" placeholder="Enter a PQL query. Remember that car, (motor d vehicle?) is equal to car OR (motor d vehicle?)"></textarea>
+            <textarea
+            class="textarea"type="text"
+            placeholder="Enter a PQL query"
+            v-model.lazy.trim='concepts[0]'
+            ></textarea>
           </div>
         </div>
 
-        <div class="field">
-          <label class="label">and</label>
+        <div class="field" id='query-top'>
+          <label class="label">AND Concept 2:</label>
           <div class="control">
-            <textarea class="textarea" type="text" placeholder="The contents of each box will be combined with AND.
-It is useful to separate the query in different concepts."></textarea>
+            <textarea
+            class="textarea"type="text"
+            placeholder="Enter a PQL query"
+            v-model.lazy.trim='concepts[1]'
+            ></textarea>
           </div>
         </div>
 
-        <div class="field">
-          <label class="label">and</label>
+        <div class="field" id='query-top'>
+          <label class="label">AND Concept 3:</label>
           <div class="control">
-            <textarea class="textarea" type="text" placeholder="Remember that hackSERA runs the ANSERA search engine, this is a FULLTEXT search"></textarea>
+            <textarea
+            class="textarea"type="text"
+            placeholder="Enter a PQL query"
+            v-model.lazy.trim='concepts[2]'
+            ></textarea>
           </div>
         </div>
 
-        <div class="field">
-          <label class="label">and</label>
+        <div class="field" id='query-top'>
+          <label class="label">AND Concept 4:</label>
           <div class="control">
-            <textarea class="textarea" type="text" placeholder="Click on single publications to select them for sending to the viewer"></textarea>
+            <textarea
+            class="textarea"type="text"
+            placeholder="Enter a PQL query"
+            v-model.lazy.trim='concepts[3]'
+            ></textarea>
           </div>
         </div>
+
+        <p>{{newQuery}}</p>
 
       </div>
 
@@ -52,8 +69,9 @@ It is useful to separate the query in different concepts."></textarea>
 import tiles from './search/tiles'
 
 export default {
-  name: 'landing-page',
+
   components: { tiles },
+
   data (){
     return {
       patents: [
@@ -177,9 +195,25 @@ export default {
           abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
           image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
         },
-      ]
+      ],
+
+      queryHistory:[],
+      concepts: ['','','',''],
     }
   },
+
+  computed:{
+    newQuery: function() {
+      //We take the fisrt concept and then add all the others with an AND combination
+      let query = this.concepts[0]
+      for (var i = 1; i < this.concepts.length; i++) {
+        if (this.concepts[i]!== '') {
+          query= query + ' and ' + this.concepts[i]
+        }
+      }
+    }
+  },
+
   methods: {
 
   }
