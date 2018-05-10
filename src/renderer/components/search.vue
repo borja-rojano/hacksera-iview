@@ -37,39 +37,154 @@ It is useful to separate the query in different concepts."></textarea>
 
 <!-- Preview column -->
       <div class="column is-9" id="preview">
-        <div class="tile is-ancestor preview-row" v-for='row in rows'>
-          <div class="tile is-parent patent">
-            <div class="tile is-child box">
-              <p class="title is-size-4 patent-title">Method of identifying chicken variety by DNA strip shape coding</p>
-              <!-- <p>The invention discloses a method to appraise chicken species with DNA encoding strip in molecular biology technical domain, which comprises the following steps: utilizing DNA test-sequence technology; checking gene sequence of the chicken group and standard control sample mitochondria cell coloring matter C oxidase I(cytochrome C oxidase I COI); proceeding chicken specie checking according to point of discontinuity of COI sequence, haploid type, haploid type multiple degree (Hd), nucleic acid multiple degree (Pi), genetic distance of double parametric model among species, nucleic acid branch degree among species, specific site of each specie and DNA classified image. This invention can reflect the difference among species compared to the other methods, which result can be scientific proof to appraise genuine-fake of chicken species.</p> -->
-              <figure class="image image is-2by3">
-                <img src="https://patentimages.storage.googleapis.com/pages/US5455008-1.png">
-              </figure>
-            </div>
-          </div>
-          <div class="tile is-parent patent">
-            <div class="tile is-child box">
-              <p class="title title is-size-4 patent-title">Method of identifying chicken variety by DNA strip shape coding</p>
-              <!-- <p>The invention discloses a method to appraise chicken species with DNA encoding strip in molecular biology technical domain, which comprises the following steps: utilizing DNA test-sequence technology; checking gene sequence of the chicken group and standard control sample mitochondria cell coloring matter C oxidase I(cytochrome C oxidase I COI); proceeding chicken specie checking according to point of discontinuity of COI sequence, haploid type, haploid type multiple degree (Hd), nucleic acid multiple degree (Pi), genetic distance of double parametric model among species, nucleic acid branch degree among species, specific site of each specie and DNA classified image. This invention can reflect the difference among species compared to the other methods, which result can be scientific proof to appraise genuine-fake of chicken species.</p> -->
-              <figure class="image image is-2by3">
-                <img src="https://patentimages.storage.googleapis.com/pages/US5455008-1.png">
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
+<!-- Results Hero -->
+      <tiles
+        :patents='patents'
+      >
+      </tiles>
+    </div>
+      <!-- End of the preview column -->
   </div>
   </div>
 </template>
 
 <script>
+import tiles from './search/tiles'
+
 export default {
-  data () {
+  name: 'landing-page',
+  components: { tiles },
+  data (){
     return {
-      rows: [0,0,0,0]
+      patents: [
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+        {
+          title: 'Apparatus for robotically performing sanger dideoxynucleotide DNA sequencing reactions using controlled pipet',
+          abstract: 'A robotic system for performing nucleic acid sequencing reactions in microtiter plate format. The robot has a robot arm and its controller, robot hands with which it can manipulate microtiter plates with lids and microtiter plates without lids and with which it can perform pipetting in the 5 to 200 microliter range, cooled storage chambers with electronically controllable doors for storage of microtiter plates, cooled storage with an electronically controllable cover for storage of nucleic acid sequencing reagents, heating blocks to incubate the reactions at appropriate temperatures above ambient temperature, storage for boxes of micropipet tips, storage for microtiter plates in which sequence reactions will be performed and software for controlling the operation of the robot during pipetting.',
+          image:'https://patentimages.storage.googleapis.com/pages/US5455008-2.png'
+        },
+        {
+          title: 'Heat and pH measurement for sequencing of DNA',
+          abstract: 'The present method involves sequencing by synthesis in which a template strand having an attached primer is immobilized in a small volume reaction mixture. In one embodiment, the reaction mixture is in contact with a sensitive heat sensor, which detects the heat of reaction from incorporation of a complementary base (dNTP) in the presence of appropriate reagents (DNA polymerase, and polymerase reaction buffer). Alternatively, or in addition, a change in pH resulting from the incorporation of nucleotides in the DNA polymerase reaction is measured. A device is provided having delivery channels for appropriate reagents, including dNTPs, which may be delivered sequentially or in a mixture. Preferably, the dNTPs are added in a predetermined sequence, and the dNTP is incorporated or not depending on the template sequence.',
+          image:'https://patentimages.storage.googleapis.com/US7932034B2/US07932034-20110426-D00001.png'
+        },
+      ]
     }
+  },
+  methods: {
+
   }
 }
+
 </script>
 
 <style scoped>
@@ -77,8 +192,6 @@ export default {
     margin-left: 15px;
     margin-right: 15px;
   }
-
-
 
   .field{
     margin-top: 10px
@@ -94,12 +207,4 @@ export default {
     margin-top: 20px;
   }
 
-  .patent{
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-
-  .patent-title {
-    margin-bottom: 0
-  }
 </style>
