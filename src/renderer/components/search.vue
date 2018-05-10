@@ -1,6 +1,7 @@
 <template>
   <div class="container is-fluid" id="mainSearch">
   <div class="columns">
+
 <!-- Search column -->
       <div class="column is-3">
 
@@ -48,17 +49,24 @@
           </div>
         </div>
 
+<!-- The button bar -->
+        <div class="level">
+          <div class="level-left">
+              <button class='level-item button is-info'
+              @click='search'
+              > Search</button>
+          </div>
+        </div>
+
         <p>{{newQuery}}</p>
 
       </div>
+<!-- End of search column -->
 
 <!-- Preview column -->
-      <div class="column is-9" id="preview">
-<!-- Results Hero -->
-      <tiles
-        :patents='patents'
-      >
-      </tiles>
+    <div class="column is-9" id="preview">
+      <tiles :patents='patents'
+      ></tiles>
     </div>
       <!-- End of the preview column -->
   </div>
@@ -205,17 +213,20 @@ export default {
   computed:{
     newQuery: function() {
       //We take the fisrt concept and then add all the others with an AND combination
-      let query = this.concepts[0]
+      let query = '(' + this.concepts[0] + ')'
       for (var i = 1; i < this.concepts.length; i++) {
         if (this.concepts[i]!== '') {
-          query= query + ' and ' + this.concepts[i]
+          query= query + ' and ' + '(' + this.concepts[i] + ')'
         }
       }
+      return query
     }
   },
 
   methods: {
-
+    search(){
+      console.log(this.newQuery);
+    }
   }
 }
 
